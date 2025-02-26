@@ -1,9 +1,9 @@
 'use client'
-
 import Link from "next/link";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getPosts } from "@/lib/api";
+import { Pagination } from 'antd';
 
 interface Post {
   id: number;
@@ -25,7 +25,7 @@ export default function Home() {
         <p>Loading...</p>
       ) : (
         <div className="flex flex-col gap-5">
-          {posts.map((post : Post) => (
+          {posts.map((post: Post) => (
             <div key={post.id} className="p-4 border rounded-lg shadow-md">
               <h2 className="text-xl font-semibold">{post.title}</h2>
               <Link href={`/blog/${post.id}`} className="text-blue-500 hover:underline">
@@ -37,19 +37,18 @@ export default function Home() {
       )}
 
       <div className="flex flex-row justify-between gap-4">
-        <button
-          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-          disabled={page === 1}
-          className=""
-        >
-          Previous
-        </button>
-        <span>Page {page}</span>
-        <button
-          onClick={() => setPage((prev) => prev + 1)}
-        >
-          Next
-        </button>
+        <Pagination
+          simple={{ readOnly: true }}
+          className="
+           [&_.ant-pagination-simple-pager]:!text-white
+           [&_.ant-pagination-prev]:!text-white 
+           [&_.ant-pagination-next]:!text-white 
+          "
+          current={page}
+          total={50}
+          pageSize={10}
+          onChange={(page) => setPage(page)}
+        />
       </div>
     </div>
   );

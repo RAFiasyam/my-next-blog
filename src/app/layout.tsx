@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
+import { ConfigProvider } from "antd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,9 +27,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
+        <ConfigProvider
+          theme={{
+            components: {
+              Pagination: {
+                colorText: "white", // ✅ Teks pagination jadi putih
+                colorTextDisabled: "#999", // Teks disable jadi abu-abu
+              },
+            },
+          }}
+        >
+          <QueryClientProvider client={queryClient}>
+            {children}
+          </QueryClientProvider>
+        </ConfigProvider>
       </body>
     </html>
   );
