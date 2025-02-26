@@ -7,8 +7,8 @@ const getPost = async (id: string) => {
 };
 
 const BlogDetail = async ({ params }: { params: { id: string } }) => {
-    const {id} = await params
-    const post = await getPost(id);
+    const {id} = await params;
+    const post = await getPost(params.id);
 
     return (
         <div className="min-h-screen p-8 pb-20">
