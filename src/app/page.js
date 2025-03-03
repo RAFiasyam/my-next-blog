@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchPosts } from "../utils/api";
 import { Card, Spin } from "antd";
+import Link from "next/link";
 
 export default function Home() {
   const { data: posts, isLoading, error } = useQuery({
@@ -18,7 +19,9 @@ export default function Home() {
       <h1 className="text-2xl font-bold">Lists Blog</h1>
       {posts?.map((post) => (
         <Card key={post.id} title={post.title} className="shadow-md">
-          <p>{post.body}</p>
+          <Link href={`/blog/${post.id}`} className="text-blue-600 hover:underline">
+            Read more
+          </Link>
         </Card>
       ))}
     </div>
