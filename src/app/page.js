@@ -87,14 +87,14 @@ export default function Home() {
         {error && <p>Error loading posts: {error.message}</p>}
         {posts && posts.length > 0 ? (
           posts.map((post) => (
-            <Card key={post.id} title={post.title} className="my-2">
+            <Card key={post.id} title={post.title} headStyle={{ color: "white", backgroundColor: "#111827", borderBottom: "1px solid #333" }} className="my-2 bg-gray-900 text-white border border-gray-700">
               <div className="flex flex-row justify-between">
                 <Link href={`/blog/${post.id}`} >Read more</Link>
                 <div className="">
                   <Button type="primary" onClick={() => handleEdit(post)} style={{ marginRight: 8 }}>
                     Edit
                   </Button>
-                  <Button type="danger" onClick={() => deleteMutation.mutate(post.id)}>
+                  <Button className="text-white" type="danger" onClick={() => deleteMutation.mutate(post.id)}>
                     Delete
                   </Button>
                 </div>
