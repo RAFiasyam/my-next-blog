@@ -76,7 +76,7 @@ export default function Home() {
 
 
   return (
-    <div className="container mx-auto p-4 ">
+    <div className="container mx-auto p-4 w-screen">
       <Button type="primary" onClick={() => { setIsModalOpen(true); setEditPost(null); }}>
         Create New Post
       </Button>
