@@ -11,7 +11,7 @@ export const api = axios.create({
     },
 });
 
-export const fecthPosts = async () => {
+export const fetchPosts = async () => {
     const response = await api.get("/posts");
     return response.data;
 };
