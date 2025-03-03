@@ -502,15 +502,46 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
-.m-5 {
-  margin: 1.25rem;
+.container {
+  width: 100%;
 }
-.m-20 {
-  margin: 5rem;
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
 }
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .mt-10 {
   margin-top: 2.5rem;
@@ -521,21 +552,23 @@ video {
 .flex {
   display: flex;
 }
-.grid {
-  display: grid;
-}
 .max-w-2xl {
   max-width: 42rem;
 }
-.justify-center {
-  justify-content: center;
+.flex-row {
+  flex-direction: row;
 }
-.gap-4 {
-  gap: 1rem;
+.flex-col {
+  flex-direction: column;
 }
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.justify-between {
+  justify-content: space-between;
+}
+.p-4 {
+  padding: 1rem;
+}
+.pt-6 {
+  padding-top: 1.5rem;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -544,22 +577,19 @@ video {
 .font-bold {
   font-weight: 700;
 }
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
-}
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+.font-semibold {
+  font-weight: 600;
 }
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
 }
-.shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 :root {
